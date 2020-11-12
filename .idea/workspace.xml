@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/imBL1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/imVM1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/home.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/homeBalancerBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/homeContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/Balancers.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/ConnectToBalancers.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/Machines.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/Select.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +50,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\3_cource\Software _Architecture\Lab3\db" />
       <recent name="G:\3_cource\Software _Architecture\Lab3\client\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -77,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605185194070</updated>
       <workItem from="1605185196392" duration="2033000" />
-      <workItem from="1605187266880" duration="8530000" />
+      <workItem from="1605187266880" duration="11279000" />
     </task>
     <task id="LOCAL-00001" summary="Add basic React">
       <created>1605188856952</created>
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605188856952</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add basic antd">
+      <created>1605202136919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605202136919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,25 +114,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add create-app" />
     <MESSAGE value="Add basic React" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add basic React" />
+    <MESSAGE value="Add basic antd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic antd" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1605186510711">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1605186510711" />
-    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605185862336">
+    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605202279985">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605185862336" />
+    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605202279985" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605188625852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605188625852" />
-    <state x="275" y="84" key="Vcs.Push.Dialog.v2" timestamp="1605188864575">
+    <state x="275" y="84" key="Vcs.Push.Dialog.v2" timestamp="1605202140124">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="84" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605188864575" />
+    <state x="275" y="84" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605202140124" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605188499083">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
