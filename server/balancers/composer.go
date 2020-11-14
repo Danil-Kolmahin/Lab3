@@ -7,11 +7,9 @@ import (
 )
 
 func Composer(port int, db *sql.DB) {
-	apiStatus := statusCloser(db)
-	apiBalancers := balancersCloser(db)
 	host := fmt.Sprintf(":%d", port)
-	http.HandleFunc("/getbalancers", apiBalancers)
-	http.HandleFunc("/status", apiStatus)
+	http.HandleFunc("/getbalancers", balancersCloser(db))
+	http.HandleFunc("/status", statusCloser(db))
 
 	http.ListenAndServe(host, nil)
 }

@@ -5,15 +5,16 @@ import (
 	"net/http"
 	"strconv"
 	"fmt"
+	"../tools"
 )
 
-type MacheneStatus struct {
-	MacheneId string
+type MachineStatus struct {
+	MachineId string
 	IsWork bool
 }
 
-func (ms *MacheneStatus) ChangeStatus(db *sql.DB) (status string, err error){
-	queryString := fmt.Sprintf("UPDATE Machines SET isUsed = %t WHERE id = %s", ms.IsWork, ms.MacheneId) //!!!!!!!!!SQL
+func (ms *MachineStatus) ChangeStatus(db *sql.DB) (status string, err error){
+	queryString := fmt.Sprintf("UPDATE Machines SET isUsed = %t WHERE id = %s", ms.IsWork, ms.MachineId)
 	_, queryErr := db.Query(queryString)
 	if queryErr != nil {return "error", queryErr}
 	return "ok", nil
@@ -22,21 +23,21 @@ func (ms *MacheneStatus) ChangeStatus(db *sql.DB) (status string, err error){
 func statusCloser(db *sql.DB) func (res http.ResponseWriter, req *http.Request) {
 	return func (res http.ResponseWriter, req *http.Request) {
 		if req.Method == "POST" {
-			req.ParseForm()
-			isWorkStr := req.PostForm.Get("isWork")
-			isWorkBool, err := strconv.ParseBool(isWorkStr)
-			if err != nil {
-				panic(err)
-			}
+			hh := tools.HttpHandler{Res: res}
 
-			ms := MacheneStatus{
-				MacheneId : req.PostForm.Get("macheneId"),
+			req.ParseForm()
+
+			isWorkStr := req.PostForm.Get("isWork")
+			isWorkBool, errParse := strconv.ParseBool(isWorkStr)
+			hh.HttpErrorChecker(errParse)
+
+			ms := MachineStatus{
+				MachineId : req.PostForm.Get("machineId"),
 				IsWork : isWorkBool,
 			}
 
 			result, dbError := ms.ChangeStatus(db)
-
-			if dbError != nil {panic(err)}
+			hh.HttpErrorChecker(dbError)
 
 			res.Write([]byte(result))
 		}

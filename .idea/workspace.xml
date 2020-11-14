@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/tools/ASCIItoIntArr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/tools/httpErr.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/Select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/Select.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/balancers/balabcersAPI.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/balabcersAPI.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/balancers/balabcersAPI.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/balabcersInf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/balancers/composer.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/composer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/balancers/macheneStatus.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/macheneStatus.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +132,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605202279985" />
+    <state x="416" y="142" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605388472135">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="416" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1605388472135" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605188625852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
