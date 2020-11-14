@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/Balancers.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/ConnectToBalancers.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/Machines.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/Select.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/balancers/balabcersAPI.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/balancers/composer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/balancers/macheneStatus.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/cmd/server/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/db/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/Select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/Select.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +39,11 @@
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="tsconfig.json" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
+  <component name="GOROOT" path="D:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,21 +54,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/db" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\3_cource\Software _Architecture\Lab3\db" />
-      <recent name="G:\3_cource\Software _Architecture\Lab3\client\src\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\3_cource\Software _Architecture\Lab3\client\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\кпі\lab3\Lab3\server\db" />
+      <recent name="G:\3_cource\Software _Architecture\Lab3\db" />
+      <recent name="G:\3_cource\Software _Architecture\Lab3\client\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

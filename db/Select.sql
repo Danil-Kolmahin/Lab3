@@ -10,3 +10,5 @@ SELECT machine_id FROM ConnectToBalancers WHERE balancer_id = 71 LIMIT 10;
 SELECT name, isUsed FROM ConnectToBalancers
 INNER JOIN machines m on m.id = connecttobalancers.machine_id
 WHERE machine_id = 72 LIMIT 10;
+
+UPDATE Machines SET isUsed = false WHERE id = 7;
