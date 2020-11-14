@@ -11,4 +11,16 @@ SELECT name, isUsed FROM ConnectToBalancers
 INNER JOIN machines m on m.id = connecttobalancers.machine_id
 WHERE machine_id = 72 LIMIT 10;
 
+
+
 UPDATE Machines SET isUsed = false WHERE id = 7;
+
+SELECT balancer_id AS "id",
+       array_agg(machine_id)::varchar(255) AS "usedMachenes",
+       COUNT(*) AS "totalMachenes"
+FROM ConnectToBalancers, Machines
+WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = true
+GROUP BY balancer_id;
+
+
+

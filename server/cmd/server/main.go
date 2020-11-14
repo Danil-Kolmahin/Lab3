@@ -14,24 +14,11 @@ func main() {
 		Port:  5432,
 		User:  "postgres",
 		Password: "1234",
-		Dbname:   "gradebook",
+		Dbname:   "lab3",
 	}
 
 	DB := connect.OpenDB()
 
 	balancers.Composer(8795, DB)
-
-	//rows, queryErr := DB.Query("SELECT * FROM balancers")
-	//
-	//if queryErr != nil { panic(queryErr)}
-
-	//for rows.Next() {
-	//	var id string
-	//	rowErr := rows.Scan(&id)
-	//	if rowErr != nil {panic(rowErr)}
-	//	result = append(result, id)
-	//}
-	//fmt.Println(result)
-	//defer db.Close()
 
 }

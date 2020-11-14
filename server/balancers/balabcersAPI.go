@@ -3,8 +3,9 @@ package balancers
 import (
 	"database/sql"
 	"encoding/json"
-	"net/http"
 	"fmt"
+	"net/http"
+	"../tools"
 )
 
 type BalancerInf struct {
@@ -14,20 +15,27 @@ type BalancerInf struct {
 }
 
 func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, error){
-	queryString := fmt.Sprintf("%t - bool %s - string") //!!!!!!!!!SQL
+	queryString := fmt.Sprintf(`
+		SELECT balancer_id AS "id",
+       		array_agg(machine_id) AS "usedMachenes",
+      		COUNT(*) AS "totalMachenes"
+		FROM ConnectToBalancers, Machines
+		WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = true
+		GROUP BY balancer_id;`)
 	rows, queryErr := db.Query(queryString)
 	if queryErr != nil {return nil, queryErr}
 
 	var result []BalancerInf
 	for rows.Next() {
 		var blc BalancerInf
-		rowErr := rows.Scan(&blc)
+		var UsedMachenesInASCII []uint8
+		rowErr := rows.Scan(&blc.Id, &UsedMachenesInASCII, &blc.TotalMachenes)
 		if rowErr != nil {panic(rowErr)}
+		var convertErr error
+		blc.UsedMachenes, convertErr = tools.ASCIItoIntArr(UsedMachenesInASCII)
+		if convertErr != nil {panic(convertErr)}
 		result = append(result, blc)
 	}
-	//balancer1 := BalancerInf{Id:7, UsedMachenes: []int{1,2,3}, TotalMachenes: 5} //inf from DB
-	//balancer2 := BalancerInf{Id:8, UsedMachenes: []int{6,7,8,9}, TotalMachenes: 15} //inf from DB
-	//result := []BalancerInf{balancer1, balancer2} //DB func append to this slice
 	return result, nil
 }
 
