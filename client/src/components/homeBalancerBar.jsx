@@ -1,27 +1,24 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {Avatar, List, Spin} from 'antd'
 import InfiniteScroll from 'react-infinite-scroller'
 import 'antd/dist/antd.css'
 import imBL1 from '../assets/imBL1.png'
+import s from './home.module.css'
 
-const messages = []
-for (let i = 1; i < 5; i++) {
-    messages.push({
-        title: `Balancer №${i}`,
-        avatar: imBL1,
+export const HomeBalancerBar = ({balancersList, watchId, setWatchId}) => {
+    const messages = balancersList.map((val, i) => ({
+        id: i,
+        title: `Balancer №${balancersList[val]}`,
         description: 'Virtual Machine Management Support System and load balancers.'
-    })
-}
-const watchId = 1
+    }))
 
-export const HomeBalancerBar = () => {
     const [data, setData] = useState(messages)
     const [loading, setLoading] = useState(false)
     const [hasMore, setHasMore] = useState(true)
 
     const handleInfiniteOnLoad = () => {
         setLoading(true)
-        if (data.length > 30) {
+        if (data.length > 10) {
             setHasMore(false)
             setLoading(false)
             return
@@ -30,11 +27,6 @@ export const HomeBalancerBar = () => {
         setData(newData.concat(data))
         setLoading(false)
     }
-
-    useEffect(() => {
-        setData(messages)
-    }, [watchId, messages])
-
     return <div>
         <InfiniteScroll
             initialLoad={false}
@@ -46,9 +38,10 @@ export const HomeBalancerBar = () => {
             <List
                 dataSource={data}
                 renderItem={item => (
-                    <List.Item key={item.title}>
+                    <List.Item key={item.id} className={item.id === watchId && s.active}
+                    onClick={() => setWatchId(item.id)}>
                         <List.Item.Meta
-                            avatar={<Avatar src={item.avatar} alt={'!'}/>}
+                            avatar={<Avatar src={imBL1} alt={'!'}/>}
                             title={item.title}
                             description={item.description}
                         />

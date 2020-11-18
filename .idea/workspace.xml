@@ -20,11 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/tools/httpErr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/store/homeReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/balancers/balabcersAPI.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/balabcersInf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/balancers/composer.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/composer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/balancers/macheneStatus.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/macheneStatus.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homeBalancerBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homeBalancerBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homeContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homeContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,10 +41,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="tsconfig.json" />
         <option value="Go File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -84,6 +90,8 @@
       <updated>1605185194070</updated>
       <workItem from="1605185196392" duration="2033000" />
       <workItem from="1605187266880" duration="11279000" />
+      <workItem from="1605622387744" duration="9600000" />
+      <workItem from="1605681812843" duration="3346000" />
     </task>
     <task id="LOCAL-00001" summary="Add basic React">
       <created>1605188856952</created>
@@ -152,5 +160,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1605188499083" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605626512962">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605626512962" />
   </component>
 </project>
