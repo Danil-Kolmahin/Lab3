@@ -8,7 +8,7 @@ import s from './home.module.css'
 export const HomeBalancerBar = ({balancersList, watchId, setWatchId}) => {
     const messages = balancersList.map((val, i) => ({
         id: i,
-        title: `Balancer №${balancersList[val]}`,
+        title: `Balancer №${val}`,
         description: 'Virtual Machine Management Support System and load balancers.'
     }))
 

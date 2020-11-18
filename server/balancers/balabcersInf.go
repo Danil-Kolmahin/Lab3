@@ -10,17 +10,23 @@ import (
 type BalancerInf struct {
 	Id int `json:"id"`
 	UsedMachines []int `json:"usedMachines"`
-	TotalMachines int `json:"totalMachines"`
+	NotUsedMachines []int `json:"notUsedMachines"`
 }
 
 func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, error){
 	queryString := fmt.Sprintf(`
+	SELECT CASE WHEN a.id is NOT NULL THEN a.id ELSE b.id END, a.used, b.notUsed FROM (
 		SELECT balancer_id AS "id",
-       		array_agg(machine_id) AS "usedMachines",
-      		COUNT(*) AS "totalMachines"
+       		array_agg(machine_id) AS used
 		FROM ConnectToBalancers, Machines
 		WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = true
-		GROUP BY balancer_id;`)
+		GROUP BY balancer_id
+		) as a
+		full join (
+		SELECT balancer_id AS "id", array_agg(machine_id) AS notUsed
+        		FROM ConnectToBalancers, Machines
+        		WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = false
+        		GROUP BY balancer_id) as b on a.id = b.id;`)
 
 	rows, queryErr := db.Query(queryString)
 	if queryErr != nil {return nil, queryErr}
@@ -28,14 +34,16 @@ func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, er
 	var result []BalancerInf
 	for rows.Next() {
 		var blc BalancerInf
-		var UsedMachinesInASCII []uint8
+		var UsedMachinesInASCII, NotUsedMachinesInASCII []uint8
 
-		rowErr := rows.Scan(&blc.Id, &UsedMachinesInASCII, &blc.TotalMachines)
+		rowErr := rows.Scan(&blc.Id, &UsedMachinesInASCII, &NotUsedMachinesInASCII)
 		if rowErr != nil { return nil, rowErr }
 
 		var convertErr error
 		blc.UsedMachines, convertErr = tools.ASCIItoIntArr(UsedMachinesInASCII)
 		if convertErr != nil {return nil, convertErr}
+		blc.NotUsedMachines, convertErr = tools.ASCIItoIntArr(NotUsedMachinesInASCII)
+        if convertErr != nil {return nil, convertErr}
 
 		result = append(result, blc)
 	}

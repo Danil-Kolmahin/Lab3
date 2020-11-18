@@ -35,7 +35,7 @@ func statusCloser(db *sql.DB) func (res http.ResponseWriter, req *http.Request) 
 				MachineId : req.PostForm.Get("machineId"),
 				IsWork : isWorkBool,
 			}
-
+            fmt.Println(ms)
 			result, dbError := ms.ChangeStatus(db)
 			hh.HttpErrorChecker(dbError)
 

@@ -8,14 +8,23 @@ import {
 import 'antd/dist/antd.css'
 import imVM1 from '../assets/imVM1.png'
 
-export const HomeContent = ({machinesList}) => {
-    const listData = machinesList.map(val => ({
+export const HomeContent = ({machinesList1, machinesList2, onPowerClick}) => {
+    let listData = machinesList1.map(val => ({
+        id: val,
         title: `Virtual Machine №${val}`,
         description: 'The user can initialize several machines that perform' +
             'the same function and connect them to a' +
             'balancer that will evenly distribute requests to these machines.',
         workload: 100
     }))
+    listData = listData.concat(machinesList2.map(val => ({
+        id: val,
+        title: `Virtual Machine №${val}`,
+        description: 'The user can initialize several machines that perform' +
+            'the same function and connect them to a' +
+            'balancer that will evenly distribute requests to these machines.',
+        workload: 0
+    })))
     return <div>
         <List
             itemLayout="vertical"
@@ -24,7 +33,7 @@ export const HomeContent = ({machinesList}) => {
                 onChange: page => {
                     console.log(page)
                 },
-                pageSize: 3,
+                pageSize: 10,
             }}
             dataSource={listData}
             renderItem={item => (
@@ -32,7 +41,7 @@ export const HomeContent = ({machinesList}) => {
                     key={item.title}
                     actions={[
                         <MenuOutlined/>,
-                        <PoweroffOutlined/>,
+                        <PoweroffOutlined spin={!item.workload} onClick={() => onPowerClick(item.id)}/>,
                         <ReloadOutlined/>
                     ]}
                     extra={<Progress type="circle" percent={item.workload}/>}
