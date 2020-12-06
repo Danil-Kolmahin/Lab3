@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects'
+import {call, put, takeEvery, take} from 'redux-saga/effects'
 
 const PUT_DATA = '/home/PUT_DATA'
 const LOAD_DATA = '/home/LOAD_DATA'
@@ -25,9 +25,32 @@ export const homeReducer = (state = initialState, action) => {
 
 export const putData = (data) => ({type: PUT_DATA, data})
 export const loadData = () => ({type: LOAD_DATA})
-export const changeStatus = (id) => ({type: CHANGE_STATUS, id})
+export const changeStatus = (id, changeOn) => ({type: CHANGE_STATUS, id, changeOn})
 
-export const getBalancers = state => state.homeReducer.data
+export const getBalancers = state => {
+    const res = []
+    state.homeReducer.data.forEach((currentValue) => {
+        const timeRes = {id: currentValue.id, machines: []}
+        let a = currentValue.usedMachines
+        !a && (a = [])
+        a.forEach((currentValue) => {
+            timeRes.machines.push({
+                isUsed: true,
+                id: currentValue
+            })
+        })
+        let b = currentValue.notUsedMachines
+        !b && (b = [])
+        b.forEach((currentValue) => {
+            timeRes.machines.push({
+                isUsed: false,
+                id: currentValue
+            })
+        })
+        res.push(timeRes)
+    })
+    return res
+}
 
 function* workerLoadData() {
     const data = yield call(
@@ -37,6 +60,8 @@ function* workerLoadData() {
 }
 
 function* workerChangeStatus() {
+    const action = yield take(CHANGE_STATUS)
+    console.log(action.id)
     yield call(() => fetch('/status',
         {
             method: 'POST',
@@ -47,8 +72,8 @@ function* workerChangeStatus() {
             //mode: 'no-cors',
             //credentials : "include",
             body: JSON.stringify({
-                isWork: true,
-                machineId: 43
+                isWork: action.changeOn,
+                machineId: action.id
             })
         }
     ))

@@ -7,24 +7,17 @@ import {
 } from '@ant-design/icons'
 import 'antd/dist/antd.css'
 import imVM1 from '../assets/imVM1.png'
+import s from "./home.module.css";
 
-export const HomeContent = ({machinesList1, machinesList2, onPowerClick}) => {
-    let listData = machinesList1.map(val => ({
-        id: val,
-        title: `Virtual Machine №${val}`,
+export const HomeContent = ({machinesList, onPowerClick}) => {
+    let listData = machinesList.map(val => ({
+        id: val.id,
+        title: `Virtual Machine №${val.id}`,
         description: 'The user can initialize several machines that perform' +
             'the same function and connect them to a' +
             'balancer that will evenly distribute requests to these machines.',
-        workload: 100
+        workload: val.isUsed ? 100 : 0
     }))
-    listData = listData.concat(machinesList2.map(val => ({
-        id: val,
-        title: `Virtual Machine №${val}`,
-        description: 'The user can initialize several machines that perform' +
-            'the same function and connect them to a' +
-            'balancer that will evenly distribute requests to these machines.',
-        workload: 0
-    })))
     return <div>
         <List
             itemLayout="vertical"
@@ -41,7 +34,12 @@ export const HomeContent = ({machinesList1, machinesList2, onPowerClick}) => {
                     key={item.title}
                     actions={[
                         <MenuOutlined/>,
-                        <PoweroffOutlined spin={!item.workload} onClick={() => onPowerClick(item.id)}/>,
+                        <PoweroffOutlined
+                            className={`${!item.workload ? s.activeButton : s.disactiveButton}
+                             ${s.button}`}
+                            onClick={
+                            () => onPowerClick(item.id, !item.workload)
+                        }/>,
                         <ReloadOutlined/>
                     ]}
                     extra={<Progress type="circle" percent={item.workload}/>}

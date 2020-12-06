@@ -26,7 +26,8 @@ func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, er
 		SELECT balancer_id AS "id", array_agg(machine_id) AS notUsed
         		FROM ConnectToBalancers, Machines
         		WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = false
-        		GROUP BY balancer_id) as b on a.id = b.id;`)
+        		GROUP BY balancer_id) as b on a.id = b.id
+        		ORDER BY a.id, b.id;`)
 
 	rows, queryErr := db.Query(queryString)
 	if queryErr != nil {return nil, queryErr}
