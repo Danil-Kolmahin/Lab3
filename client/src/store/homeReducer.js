@@ -31,21 +31,21 @@ export const getBalancers = state => state.homeReducer.data
 
 function* workerLoadData() {
     const data = yield call(
-        () => fetch('http://localhost:3001/getbalancers').then(res => res.json())
+        () => fetch('/getbalancers').then(res => res.json())
     )
     yield put(putData(data))
 }
 
 function* workerChangeStatus() {
-    yield call(() => fetch('http://localhost:3001/status',
+    yield call(() => fetch('/status',
         {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            mode: 'no-cors',
-            credentials : "include",
+            //mode: 'no-cors',
+            //credentials : "include",
             body: JSON.stringify({
                 isWork: true,
                 machineId: 43

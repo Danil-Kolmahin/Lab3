@@ -15,7 +15,7 @@ func main() {
 		Host : "localhost",
 		Port:  5432,
 		User:  "postgres",
-		Password: "0000",
+		Password: "1234",
 		Dbname:   "lab3",
 	}
 	DB := connect.OpenDB()

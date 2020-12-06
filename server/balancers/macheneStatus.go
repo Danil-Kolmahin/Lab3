@@ -1,20 +1,20 @@
 package balancers
 
 import (
-	"database/sql"
-	"net/http"
-	"strconv"
-	"fmt"
 	"../tools"
+	"database/sql"
+	"encoding/json"
+	"fmt"
+	"net/http"
 )
 
 type MachineStatus struct {
-	MachineId string
+	MachineId int
 	IsWork bool
 }
 
 func (ms *MachineStatus) ChangeStatus(db *sql.DB) (status string, err error){
-	queryString := fmt.Sprintf("UPDATE Machines SET isUsed = %t WHERE id = %s", ms.IsWork, ms.MachineId)
+	queryString := fmt.Sprintf("UPDATE Machines SET isUsed = %t WHERE id = %d", ms.IsWork, ms.MachineId)
 	_, queryErr := db.Query(queryString)
 	if queryErr != nil {return "error", queryErr}
 	return "ok", nil
@@ -24,18 +24,14 @@ func statusCloser(db *sql.DB) func (res http.ResponseWriter, req *http.Request) 
 	return func (res http.ResponseWriter, req *http.Request) {
 		if req.Method == "POST" {
 			hh := tools.HttpHandler{Res: res}
+			hh.HttpStandartHeader()
 
-			req.ParseForm()
+			var ms MachineStatus
+			err := json.NewDecoder(req.Body).Decode(&ms)
 
-			isWorkStr := req.PostForm.Get("isWork")
-			isWorkBool, errParse := strconv.ParseBool(isWorkStr)
-			hh.HttpErrorChecker(errParse)
+			hh.HttpErrorChecker(err)
 
-			ms := MachineStatus{
-				MachineId : req.PostForm.Get("machineId"),
-				IsWork : isWorkBool,
-			}
-            fmt.Println(ms)
+            fmt.Println("POST data :", ms)
 			result, dbError := ms.ChangeStatus(db)
 			hh.HttpErrorChecker(dbError)
 

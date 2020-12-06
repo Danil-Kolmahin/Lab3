@@ -18,6 +18,7 @@ func (hh *HttpHandler) HttpErrorChecker(err error){
 
 func (hh *HttpHandler)  HttpStandartHeader() {
 	hh.Res.Header().Set("Access-Control-Allow-Origin", "*")
+	hh.Res.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
 	hh.Res.Header().Set("Content-Type", "application/json")
 }
 
