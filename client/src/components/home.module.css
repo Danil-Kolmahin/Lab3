@@ -18,3 +18,10 @@
 .disactiveButton {
     background-color: #c41a1a;
 }
+
+.infiniteScroll {
+    height: 625px;
+    overflow: auto;
+    display: flex; /*???*/
+    flex-direction: column-reverse; /*???*/
+}

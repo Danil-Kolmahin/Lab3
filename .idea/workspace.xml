@@ -21,6 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homeBalancerBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homeBalancerBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/homeContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homeContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/homeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/homeReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/balancers/balabcersInf.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/balabcersInf.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +60,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\3_cource\Software _Architecture\Lab3" />
       <recent name="D:\Study\кпі\lab3\Lab3\server\db" />
       <recent name="G:\3_cource\Software _Architecture\Lab3\db" />
       <recent name="G:\3_cource\Software _Architecture\Lab3\client\src\components" />
@@ -83,6 +90,7 @@
       <workItem from="1605622387744" duration="9600000" />
       <workItem from="1605681812843" duration="3506000" />
       <workItem from="1605699154752" duration="8365000" />
+      <workItem from="1607357022462" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="Add basic React">
       <created>1605188856952</created>
@@ -105,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605685549396</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add demonstration">
+      <created>1607333571754</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607333571754</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,40 +143,7 @@
     <MESSAGE value="Add basic React" />
     <MESSAGE value="Add basic antd" />
     <MESSAGE value="Add basic data fetch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add basic data fetch" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="309" y="42" key="#Inspections" timestamp="1605186510711">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1605186510711" />
-    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605202279985">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605202279985" />
-    <state x="416" y="142" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605388472135">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="416" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1605388472135" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605701502116">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605701502116" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1607249046027">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607249046027" />
-    <state x="275" y="84" key="Vcs.Push.Dialog.v2" timestamp="1605685558880">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="84" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605685558880" />
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605188499083">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1605188499083" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605626512962">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605626512962" />
+    <MESSAGE value="Add demonstration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add demonstration" />
   </component>
 </project>

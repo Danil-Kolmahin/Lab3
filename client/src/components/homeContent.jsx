@@ -26,7 +26,7 @@ export const HomeContent = ({machinesList, onPowerClick}) => {
                 onChange: page => {
                     console.log(page)
                 },
-                pageSize: 10,
+                pageSize: 3,
             }}
             dataSource={listData}
             renderItem={item => (
