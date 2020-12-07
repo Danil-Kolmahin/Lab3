@@ -21,12 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc208eb6-b805-46b2-98fa-59d629a45065" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/homeContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/homeContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/homeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/homeReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/balancers/balabcersInf.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/balancers/balabcersInf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/cmd/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
