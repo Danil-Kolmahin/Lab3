@@ -14,10 +14,7 @@ export const Home = () => {
         {data[0] ?
             <div className={s.home}>
                 <HomeContent machinesList={data[watchId].machines}
-                             onPowerClick={(id, changeOn) => {
-                                 dispatch(changeStatus(id, changeOn))
-                                 dispatch(loadData())
-                             }}/>
+                             onPowerClick={(id, changeOn) => dispatch(changeStatus(id, changeOn))}/>
                 <HomeBalancerBar balancersList={data.map(val => val.id)}
                                  watchId={watchId} setWatchId={setWatchId}/>
             </div>

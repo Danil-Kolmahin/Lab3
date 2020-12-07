@@ -6,11 +6,12 @@ import imBL1 from '../assets/imBL1.png'
 import s from './home.module.css'
 
 export const HomeBalancerBar = ({balancersList, watchId, setWatchId}) => {
-    const messages = balancersList.map((val, i) => ({
+    let messages = balancersList.reverse().map((val, i) => ({
         id: i,
         title: `Balancer №${val}`,
         description: 'Virtual Machine Management Support System and load balancers.'
     }))
+    messages = messages.reverse()
 
     const [data, setData] = useState(messages)
     const [loading, setLoading] = useState(false)
@@ -27,7 +28,7 @@ export const HomeBalancerBar = ({balancersList, watchId, setWatchId}) => {
         setData(newData.concat(data))
         setLoading(false)
     }
-    return <div>
+    return <div className={s.infiniteScroll}>
         <InfiniteScroll
             initialLoad={false}
             pageStart={0}

@@ -15,7 +15,8 @@ type BalancerInf struct {
 
 func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, error){
 	queryString := fmt.Sprintf(`
-	SELECT CASE WHEN a.id is NOT NULL THEN a.id ELSE b.id END, a.used, b.notUsed FROM (
+	SELECT l.all, l.used, l.notUsed FROM (
+	SELECT CASE WHEN a.id is NOT NULL THEN a.id ELSE b.id END as all, a.used as used, b.notUsed as notUsed FROM (
 		SELECT balancer_id AS "id",
        		array_agg(machine_id) AS used
 		FROM ConnectToBalancers, Machines
@@ -26,8 +27,7 @@ func HandleListBalancers(res http.ResponseWriter, db *sql.DB) ([]BalancerInf, er
 		SELECT balancer_id AS "id", array_agg(machine_id) AS notUsed
         		FROM ConnectToBalancers, Machines
         		WHERE ConnectToBalancers.machine_id = Machines.id AND Machines.isUsed = false
-        		GROUP BY balancer_id) as b on a.id = b.id
-        		ORDER BY a.id, b.id;`)
+        		GROUP BY balancer_id) as b on a.id = b.id) as l ORDER BY l.all;`)
 
 	rows, queryErr := db.Query(queryString)
 	if queryErr != nil {return nil, queryErr}

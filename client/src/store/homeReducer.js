@@ -77,6 +77,7 @@ function* workerChangeStatus() {
             })
         }
     ))
+    yield put(loadData())
 }
 
 export function* watchLoadData() {
