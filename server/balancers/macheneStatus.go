@@ -1,7 +1,7 @@
 package balancers
 
 import (
-	"../tools"
+	"github.com/KolmaginDanil/Lab3/server/tools"
 	"database/sql"
 	"encoding/json"
 	"fmt"
