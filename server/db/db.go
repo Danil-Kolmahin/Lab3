@@ -2,29 +2,32 @@ package db
 
 import (
 	"database/sql"
-	"fmt"
 	_ "github.com/lib/pq"
+	"net/url"
 )
 
-type Connect struct {
-	Host  string
-	Port  int
-	User  string
-	Password string
-	Dbname   string
+type Connection struct {
+	DbName         string
+	User, Password string
+	Host           string
+	DisableSSL     bool
 }
 
-func (c *Connect)  ConnectStr() string{
-	connectStr := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		c.Host, c.Port, c.User, c.Password, c.Dbname)
-	return connectStr
-}
-
-func (c *Connect) OpenDB() *sql.DB{
-	db, err := sql.Open("postgres", c.ConnectStr())
-	if err != nil {
-		panic(err)
+func (c *Connection) ConnectionURL() string {
+	dbUrl := &url.URL{
+		Scheme: "postgres",
+		Host:   c.Host,
+		User:   url.UserPassword(c.User, c.Password),
+		Path:   c.DbName,
 	}
-	return db
+	if c.DisableSSL {
+		dbUrl.RawQuery = url.Values{
+			"sslmode": []string{"disable"},
+		}.Encode()
+	}
+	return dbUrl.String()
+}
+
+func (c *Connection) Open() (*sql.DB, error) {
+	return sql.Open("postgres", c.ConnectionURL())
 }
