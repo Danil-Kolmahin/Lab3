@@ -14,7 +14,7 @@ func ComposeApiServer(port HttpPortNumber) (*BalancerApiServer, error) {
 		NewDbConnection,
 		// Add providers from balancers package.
 		balancers.Providers,
-		// Provide BalancerApiServer instantiating the structure and injecting channels handler and port number.
+		// Provide BalancerApiServer instantiating the structure and injecting balancers handler and port number.
 		wire.Struct(new(BalancerApiServer), "Port", "BalancersHandler"),
 	)
 	return nil, nil

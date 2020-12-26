@@ -5,8 +5,8 @@ const Client = (baseUrl) => {
     const client = http.Client(baseUrl);
 
     return {
-        balancersInf: () => client.get('/getbalancers'),
-        changeBalancersStatus: (machineId, isWork) => client.post('/status', {machineId, isWork})
+        balancersInf: () => client.get('/balancers'),
+        changeBalancersStatus: (machineId, isWork) => client.post('/balancers', {machineId, isWork})
     }
 
 };

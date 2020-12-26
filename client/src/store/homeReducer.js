@@ -54,7 +54,7 @@ export const getBalancers = state => {
 
 function* workerLoadData() {
     const data = yield call(
-        () => fetch('/getbalancers').then(res => res.json())
+        () => fetch('/balancers').then(res => res.json())
     )
     yield put(putData(data))
 }
@@ -62,7 +62,7 @@ function* workerLoadData() {
 function* workerChangeStatus() {
     const action = yield take(CHANGE_STATUS)
     console.log(action.id)
-    yield call(() => fetch('/status',
+    yield call(() => fetch('/balancers',
         {
             method: 'POST',
             headers: {

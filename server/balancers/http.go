@@ -10,7 +10,7 @@ import (
 // Channels HTTP handler.
 type HttpHandlerFunc http.HandlerFunc
 
-// HttpHandler creates a new instance of channels HTTP handler.
+// HttpHandler creates a new instance of balancers HTTP handler.
 func HttpHandler(store *Store) HttpHandlerFunc {
 	return func(rw http.ResponseWriter, r *http.Request) {
 		if r.Method == "GET" {
@@ -35,7 +35,7 @@ func handleListBalancers(store *Store, rw http.ResponseWriter) {
 
 func handleChangeBalancerStatus(r *http.Request, rw http.ResponseWriter, store *Store) {
 	var ms MachineStatus
-	if err := son.NewDecoder(r.Body).Decode(&ms); err != nil {
+	if err := json.NewDecoder(r.Body).Decode(&ms); err != nil {
 		log.Printf("Error decoding balancer input: %s", err)
 		tools.WriteJsonBadRequest(rw, "bad JSON payload")
 		return
